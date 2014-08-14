@@ -1,0 +1,65 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Airport sizes</title>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<link rel="stylesheet" type="text/css" href="http://giscope.squarespace.com/storage/airports-app/bootstrap.css">
+<script type="text/javascript" src="http://giscope.squarespace.com/storage/airports-app/leaflet.js"></script>
+<script type="text/javascript">
+<!--
+if (screen.width <= 750) {
+document.location = "http://giscope.squarespace.com/storage/airports-app/Mobile.html";
+}
+//-->
+</script>
+<style type="text/css">
+.auto-style2 {
+	margin-bottom: 6px;
+}
+.auto-style4 {
+	color: #FF0000;
+}
+</style>
+ <link rel="stylesheet" href="http://giscope.squarespace.com/storage/airports-app/leaflet.css" />
+ <!--[if lte IE 8]>
+     <link rel="stylesheet" href="http://giscope.squarespace.com/storage/airports-app/leaflet.ie.css" />
+ <![endif]-->
+	</head>
+		<body style="margin-left: 10">
+				<div id="map" style="width:100%; height:100%; position:fixed; top: 0; left: 0;">
+			 <script src="toner_bootstrap.js"></script></div>
+			   <div style="position:fixed; top: 0; left: 0; z-index: 10; max-width: 400px; margin: 40px; padding: 35px; background-color: white; background-color: rgba(255, 255, 255, 0.85);">
+				<p><strong> London remains the busiest air travel region in Europe.</strong></p>
+			    <p>Over 130 million passengers used London's airports in 2012, miles ahead of Paris, Frankfurt, Amsterdam or Berlin. Click on the yellow circles to see which airport carries the most passengers.</p>
+				<p>London serves a mixture of leisure and business passengers, where as provincial airports tend to serve many tourism and holiday destinations, thereby catering primarily for leisure passengers.</p>
+				<p><strong>Top 5 Intl destinations from the busiest UK airports</strong></p>
+				<p>Type in a three letter airport code (e.g, lhr for Heathrow) to look at the top 5 international destinations from various UK airports.</p>
+	             <form action="javascript:alert('It seems that you entered an incorrect airport code...try again!');" class="auto-style2">
+		           <div align="center" style="width: 340px"></div>	
+		           <input type="text" placeholder="Enter an airport code">
+		            <input type="submit" value="Search">
+	             	<div>
+					 </div>
+	             </form>  
+	             <p id="topdest" style="font-size:large; color:green"></p>
+	             <p style="font-size:x-small">&nbsp;<span>Data source: © CAA passenger statistics, 2012, 
+				CAA International airport destinations, 2012.</span>
+				<a href="http://www.caa.co.uk">www.caa.co.uk, </a><a href="http://www.developpement-durable.gouv.fr/IMG/pdf/Bulletin_Stat_2012.pdf">dgac, </a><a href="http://www.adv.aero/fileadmin/pdf/statistiken/2012/12.2012_ADV-Monatsstatistik.pdf">adv, </a><a href="http://www.schipol.nl">Schipol airport</a></p>
+				<p style="font-size:x-small">Styled with Bootstrap, licensed under
+				<a href="http://www.apache.org/licenses/LICENSE-2.0">Apache Licence 
+				v2.0</a>.</p>
+				<p style="font-size:x-small">© 
+				<a class="auto-style4" href="http://www.mapsnapps.com">Mapsnapps.com</a>. Report any bugs or issues
+				<a href="mailto:max@mapsnapps.com?subject=Airport_Bootstrap">here</a>.</p>
+				<a href="https://twitter.com/mapsnapps" class="twitter-follow-button" data-show-count="true">Follow @mapsnapps</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				
+
+	             </div>
+		             
+			    <script src="airport_query.js">
+			    </script>				
+			</body>
+</html>
