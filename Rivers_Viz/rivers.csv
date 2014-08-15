@@ -1,5 +1,6 @@
-Name,Basin,Latitude,Longitude,Recent_lev,Highest_lev
-Maidstone,Medway,51.27417,0.51753,0.40,3.58
-Lewes,Ouse,50.87625,0.01597,0.89,3.94
-Canterbury,Great Stour,51.28258,1.07997,0.90,1.36
-Bodiam,Rother,50.9975,0.5375,0.13,3.36
+Name,Basin,Latitude,Longitude,Recent_lev,Typical_low,Typical_high,Highest_lev
+Maidstone,Medway,51.27417,0.51753,0.33,0.23,1.25,3.58
+Lewes,Ouse,50.87625,0.01597,0.89,0.30,2.90,3.94
+Canterbury,Great Stour,51.26146,1.03584,0.22,0.15,1.00,1.36
+Brede-Gate,Brede,50.94594,0.73122,1.09,0.25,1.26,3.42
+Browns-Br,Rother,50.98170,0.46874,0.05,0.06,1.40,1.66

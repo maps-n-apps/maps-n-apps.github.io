@@ -61,10 +61,9 @@ function riverMap() {
       .attr("cy", function(d) {return projection ([d.Longitude, d.Latitude]) [1];})
       .attr("r", 5).text(function(d){return d.Name})   
       .style("fill", function(d) {
-                        if (d.Name === "Lewes") { return "green";}
-                        else if (d.Name === "Maidstone") { return "#CC0000";}
-                        else if (d.Name === "Canterbury") { return "purple";}
-                        else if (d.Name === "Udiam") { return "brown";} 
+                        if (d.Recent_lev < d.Typical_low) { return "blue";}
+                        else if (d.Recent_lev < d.Typical_high && d.Recent_lev > d.Typical_low ) { return "green";}
+                        else if (d.Recent_lev > d.Typical_high) { return "red";} 
                      })   
       .style("opacity", 0.85)
       .on("mouseover", function(){d3.select(this).style("fill", "orange").attr("r", function (d) {return d.Recent_lev * 50})
@@ -76,8 +75,10 @@ function riverMap() {
                                       d3.select("#Lewes").attr("fill", "steelblue") &&
                                       d3.select("#scrollview-stour").style("display", "none") &&
                                       d3.select("#Canterbury").attr("fill", "steelblue") &&
-                                      d3.select("#scrollview-rother").style("display", "none")
-                                      d3.select("#Bodiam").attr("fill", "steelblue")} 
+                                      d3.select("#scrollview-brede").style("display", "none")
+                                      d3.select("#Brede-Gate").attr("fill", "steelblue") &&
+                                      d3.select("#scrollview-browns").style("display", "none") &&
+                                      d3.select("#Browns-Br").attr("fill", "steelblue")} 
                                      else if (d.Name === "Lewes")
                                      {d3.select ("#scrollview-ouse").style("display", "initial") &&
                                       d3.select("#Lewes").attr("fill", "orange") &&
@@ -85,8 +86,10 @@ function riverMap() {
                                       d3.select("#Maidstone").attr("fill", "steelblue") &&
                                       d3.select("#scrollview-stour").style("display", "none") &&
                                       d3.select("#Canterbury").attr("fill", "steelblue") &&
-                                      d3.select("#scrollview-rother").style("display", "none")
-                                      d3.select("#Bodiam").attr("fill", "steelblue")}
+                                      d3.select("#scrollview-brede").style("display", "none")
+                                      d3.select("#Brede-Gate").attr("fill", "steelblue") &&
+                                      d3.select("#scrollview-browns").style("display", "none") &&
+                                      d3.select("#Browns-Br").attr("fill", "steelblue")}
                                      else if (d.Name === "Canterbury")
                                      {d3.select ("#scrollview-stour").style("display", "initial") &&
                                       d3.select("#Canterbury").attr("fill", "orange") &&
@@ -94,23 +97,38 @@ function riverMap() {
                                       d3.select("#Maidstone").attr("fill", "steelblue") &&
                                       d3.select("#scrollview-ouse").style("display", "none") &&
                                       d3.select("#Lewes").attr("fill", "steelblue") &&
-                                      d3.select("#scrollview-rother").style("display", "none") &&
-                                      d3.select("#Bodiam").attr("fill", "steelblue")}
-                                     else if (d.Name === "Bodiam")
-                                     {d3.select ("#scrollview-rother").style("display", "initial") &&
-                                      d3.select("#Bodiam").attr("fill", "orange") &&
+                                      d3.select("#scrollview-brede").style("display", "none") &&
+                                      d3.select("#Brede-Gate").attr("fill", "steelblue") &&
+                                      d3.select("#scrollview-browns").style("display", "none") &&
+                                      d3.select("#Browns-Br").attr("fill", "steelblue")}
+                                     else if (d.Name === "Brede-Gate")
+                                     {d3.select ("#scrollview-brede").style("display", "initial") &&
+                                      d3.select("#Brede-Gate").attr("fill", "orange") &&
                                       d3.select("#scrollview-medway").style("display", "none") &&
                                       d3.select("#Maidstone").attr("fill", "steelblue") &&
                                       d3.select("#scrollview-ouse").style("display", "none") &&
                                       d3.select("#Lewes").attr("fill", "steelblue") &&
                                       d3.select("#scrollview-stour").style("display", "none") &&
-                                      d3.select("#Canterbury").attr("fill", "steelblue")}
+                                      d3.select("#Canterbury").attr("fill", "steelblue") &&
+                                      d3.select("#scrollview-browns").style("display", "none") &&
+                                      d3.select("#Browns-Br").attr("fill", "steelblue")}
+                                      else if (d.Name === "Browns-Br")
+                                     {d3.select ("#scrollview-browns").style("display", "initial") &&
+                                      d3.select("#Browns-Br").attr("fill", "orange") &&
+                                      d3.select("#scrollview-medway").style("display", "none") &&
+                                      d3.select("#Maidstone").attr("fill", "steelblue") &&
+                                      d3.select("#scrollview-ouse").style("display", "none") &&
+                                      d3.select("#Lewes").attr("fill", "steelblue") &&
+                                      d3.select("#scrollview-stour").style("display", "none") &&
+                                      d3.select("#Canterbury").attr("fill", "steelblue") &&
+                                      d3.select("#scrollview-brede").style("display", "none") &&
+                                      d3.select("#Brede-Gate").attr("fill", "steelblue")}
+
                                          ;})
       .on("mouseout", function(){d3.select(this).style("fill", function(d) {
-                        if (d.Name === "Lewes") { return "green";}
-                        else if (d.Name === "Maidstone") { return "#CC0000";}
-                        else if (d.Name === "Canterbury") { return "purple";}
-                        else if (d.Name === "Udiam") { return "brown";}
+                        if (d.Recent_lev < d.Typical_low) { return "blue";}
+                        else if (d.Recent_lev < d.Typical_high && d.Recent_lev > d.Typical_low ) { return "green";}
+                        else if (d.Recent_lev > d.Typical_high) { return "red";}
                       })
       .attr("r", 12);})
       .transition()
@@ -133,15 +151,17 @@ function riverMap() {
                  .attr("font-size", "16px")
                  .attr("fill", "black")
                  .on("mouseover", function(e){d3.select(this).style("fill", "orange").style("stroke-width", "5px")})
-                 .on("click", function(d, e){ if (d.Name === "Maidstone") 
+                 .on("click", function(d, e){ if (d.Name === "Maidstone") // CSS selections here with event handlers.
                                      {d3.select("#scrollview-medway").style("display", "initial") &&
                                       d3.select("#Maidstone").attr("fill", "orange") &&
                                       d3.select("#scrollview-ouse").style("display", "none") &&
                                       d3.select("#Lewes").attr("fill", "steelblue") &&
                                       d3.select("#scrollview-stour").style("display", "none") &&
                                       d3.select("#Canterbury").attr("fill", "steelblue") &&
-                                      d3.select("#scrollview-rother").style("display", "none")
-                                      d3.select("#Bodiam").attr("fill", "steelblue")} 
+                                      d3.select("#scrollview-brede").style("display", "none")
+                                      d3.select("#Brede-Gate").attr("fill", "steelblue") &&
+                                      d3.select("#scrollview-browns").style("display", "none") &&
+                                      d3.select("#Browns-Br").attr("fill", "steelblue")} 
                                      else if (d.Name === "Lewes")
                                      {d3.select ("#scrollview-ouse").style("display", "initial") &&
                                       d3.select("#Lewes").attr("fill", "orange") &&
@@ -149,8 +169,10 @@ function riverMap() {
                                       d3.select("#Maidstone").attr("fill", "steelblue") &&
                                       d3.select("#scrollview-stour").style("display", "none") &&
                                       d3.select("#Canterbury").attr("fill", "steelblue") &&
-                                      d3.select("#scrollview-rother").style("display", "none")
-                                      d3.select("#Bodiam").attr("fill", "steelblue")}
+                                      d3.select("#scrollview-brede").style("display", "none")
+                                      d3.select("#Brede-Gate").attr("fill", "steelblue") &&
+                                      d3.select("#scrollview-browns").style("display", "none") &&
+                                      d3.select("#Browns-Br").attr("fill", "steelblue")}
                                      else if (d.Name === "Canterbury")
                                      {d3.select ("#scrollview-stour").style("display", "initial") &&
                                       d3.select("#Canterbury").attr("fill", "orange") &&
@@ -158,17 +180,32 @@ function riverMap() {
                                       d3.select("#Maidstone").attr("fill", "steelblue") &&
                                       d3.select("#scrollview-ouse").style("display", "none") &&
                                       d3.select("#Lewes").attr("fill", "steelblue") &&
-                                      d3.select("#scrollview-rother").style("display", "none") &&
-                                      d3.select("#Bodiam").attr("fill", "steelblue")}
-                                     else if (d.Name === "Bodiam")
-                                     {d3.select ("#scrollview-rother").style("display", "initial") &&
-                                      d3.select("#Bodiam").attr("fill", "orange") &&
+                                      d3.select("#scrollview-brede").style("display", "none") &&
+                                      d3.select("#Brede-Gate").attr("fill", "steelblue") &&
+                                      d3.select("#scrollview-browns").style("display", "none") &&
+                                      d3.select("#Browns-Br").attr("fill", "steelblue")}
+                                     else if (d.Name === "Brede-Gate")
+                                     {d3.select ("#scrollview-brede").style("display", "initial") &&
+                                      d3.select("#Brede-Gate").attr("fill", "orange") &&
                                       d3.select("#scrollview-medway").style("display", "none") &&
                                       d3.select("#Maidstone").attr("fill", "steelblue") &&
                                       d3.select("#scrollview-ouse").style("display", "none") &&
                                       d3.select("#Lewes").attr("fill", "steelblue") &&
                                       d3.select("#scrollview-stour").style("display", "none") &&
-                                      d3.select("#Canterbury").attr("fill", "steelblue")}
+                                      d3.select("#Canterbury").attr("fill", "steelblue") &&
+                                      d3.select("#scrollview-browns").style("display", "none") &&
+                                      d3.select("#Browns-Br").attr("fill", "steelblue")}
+                                      else if (d.Name === "Browns-Br")
+                                     {d3.select ("#scrollview-browns").style("display", "initial") &&
+                                      d3.select("#Browns-Br").attr("fill", "orange") &&
+                                      d3.select("#scrollview-medway").style("display", "none") &&
+                                      d3.select("#Maidstone").attr("fill", "steelblue") &&
+                                      d3.select("#scrollview-ouse").style("display", "none") &&
+                                      d3.select("#Lewes").attr("fill", "steelblue") &&
+                                      d3.select("#scrollview-stour").style("display", "none") &&
+                                      d3.select("#Canterbury").attr("fill", "steelblue") &&
+                                      d3.select("#scrollview-brede").style("display", "none") &&
+                                      d3.select("#Brede-Gate").attr("fill", "steelblue")}
                                          ;})
                  .on("mouseout", function(e){d3.select(this).style("fill", "black")});
              
