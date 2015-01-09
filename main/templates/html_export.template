@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- Generated with d3-generator.com -->
+<html>
+  <head>
+     <title>Bar Chart</title>
+     <meta http-equiv="X-UA-Compatible" content="IE=9">
+  </head>
+  <body>
+    <div id="chart"></div>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script>
+          function renderChart() {
+          var label = "<%= label %>";
+          var variable = "<%= variable %>";
+          var sorting = "<%= sorting %>";
+          "<%= sum %>";
+          var colour = "<%= colour %>";
+          var data = d3.csv.parse(d3.select('#csv').text());
+          <%= code %>
+          }
+    </script>
+    <script id="csv" type="text/csv"><%= csv %></script>
+    <script>renderChart();</script>
+  </body>
+</html>

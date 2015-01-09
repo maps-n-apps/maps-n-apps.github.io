@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+<head>
+    <!-- start Mixpanel --><script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+        for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="http://cdn.mxpnl.com/libs/mixpanel-2.2.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+        mixpanel.init("YOUR TOKEN");</script><!-- end Mixpanel -->
+    <title>Generate D3 Bar Chart Source Code - D3.js Visualization Creator</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/d3-generator.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">D3.js Chart Maker!</a>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Top</a></li>
+                <li ><a href="#configuration">CSV / Configuration</a></li>
+                <li ><a href="#source">Source Code / Chart</a></li>
+                <li ><a href="main-pie">D3.js Pie Chart Maker!</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="jumbotron" style="background-image: linear-gradient(to bottom,#eee 0,#ffe  100%);">
+      <h1>Hello, fellow D3er!</h1>
+      <p><a href="http://d3js.org/">D3.js</a> is a great JavaScript library that allows you to create
+        <a href="https://github.com/mbostock/d3/wiki/Gallery">custom data visualizations</a>.
+        This code generator helps you get off the ground quickly by automatically producing source code templates
+        for various chart configurations.
+        The generated source code is loosely based on
+        <a href="http://mbostock.github.com/d3/tutorial/bar-1.html">Mike Bostock's D3 bar chart tutorial</a>.</p>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96" height="91">
+          <linearGradient id="logo-gradient-1" gradientUnits="userSpaceOnUse" x1="37.2417" y1="7.0552" x2="97.9669" y2="67.7803">
+            <stop offset="0" stop-color="#F9A03C"/>
+            <stop offset="1" stop-color="#F7974E"/>
+          </linearGradient>
+          <linearGradient id="logo-gradient-2" gradientUnits="userSpaceOnUse" x1="-8.0391" y1="17.2148" x2="45.724" y2="70.978">
+            <stop offset="0" stop-color="#F9A03C"/>
+            <stop offset="1" stop-color="#F7974E"/>
+          </linearGradient>
+          <linearGradient id="logo-gradient-3" gradientUnits="userSpaceOnUse" x1="11.9321" y1="36.5513" x2="66.3901" y2="91.0092">
+            <stop offset="0" stop-color="#F9A03C"/>
+            <stop offset="1" stop-color="#F7974E"/>
+          </linearGradient>
+          <linearGradient id="logo-gradient-4" gradientUnits="userSpaceOnUse" x1="1.6533" y1="-1.6533" x2="86.899" y2="83.5924">
+            <stop offset="0" stop-color="#F26D58"/>
+            <stop offset="1" stop-color="#F9A03C"/>
+          </linearGradient>
+          <linearGradient id="logo-gradient-5" gradientUnits="userSpaceOnUse" x1="45.2446" y1="-9.5483" x2="108.0998" y2="53.3068">
+            <stop offset="0" stop-color="#B84E51"/>
+            <stop offset="1" stop-color="#F68E48"/>
+          </linearGradient>
+          <linearGradient id="logo-gradient-6" gradientUnits="userSpaceOnUse" x1="6.6323" y1="64.3193" x2="49.6788" y2="107.3658">
+            <stop offset="0" stop-color="#F9A03C"/>
+            <stop offset="1" stop-color="#F7974E"/>
+          </linearGradient>
+          <path fill="url(#logo-gradient-1)" d="M95.82,65.857c0.043-0.418,0.074-0.84,0.098-1.264c0.029-0.502-30.211-29.194-30.211-29.194h-0.723C64.984,35.399,95.635,67.73,95.82,65.857z"/>
+          <path fill="url(#logo-gradient-2)" d="M31.302,55.904c-0.04,0.088-0.08,0.176-0.121,0.264c-0.043,0.092-0.087,0.184-0.131,0.275c-0.964,2.01,13.495,16.145,14.658,14.428c0.053-0.076,0.106-0.156,0.159-0.232c0.059-0.09,0.117-0.176,0.175-0.266C46.972,68.961,31.715,54.986,31.302,55.904z"/>
+          <path fill="url(#logo-gradient-3)" d="M51.734,75.781c-0.041,0.09-0.332,0.582-0.598,0.842c-0.045,0.09,14.115,14.133,14.115,14.133h1.275C66.527,90.756,53.234,76.375,51.734,75.781z"/>
+          <path fill="url(#logo-gradient-4)" d="M95.938,64.338c-0.662,14.68-12.807,26.418-27.645,26.418h-2.006L51.469,76.158c1.219-1.719,2.352-3.5,3.361-5.357h13.463c4.258,0,7.723-3.463,7.723-7.723c0-4.258-3.465-7.723-7.723-7.723h-7.967c0.607-3.209,0.939-6.518,0.939-9.903c0-3.437-0.338-6.793-0.967-10.053h4.949l30.604,30.155C95.887,65.15,95.916,64.746,95.938,64.338z M8.05,0H0v19.955h8.05c14.06,0,25.5,11.437,25.5,25.497c0,3.825-0.853,7.456-2.369,10.716l14.686,14.471c4.822-7.215,7.641-15.877,7.641-25.187C53.508,20.39,33.115,0,8.05,0z"/>
+          <path fill="url(#logo-gradient-5)" d="M68.293,0H35.695c7.962,4.861,14.555,11.754,19.047,19.955h13.551c4.258,0,7.723,3.463,7.723,7.723c0,4.259-3.465,7.722-7.723,7.722h-3.045l30.604,30.155c0.072-0.818,0.117-1.641,0.117-2.477c0-6.727-2.414-12.898-6.422-17.701c4.008-4.801,6.422-10.973,6.422-17.699C95.969,12.417,83.555,0,68.293,0z"/>
+          <path fill="url(#logo-gradient-6)" d="M66.287,90.756H35.928C42.039,86.982,47.322,82,51.469,76.158L66.287,90.756z M45.867,70.639L31.182,56.168C27.125,64.887,18.284,70.951,8.05,70.951H0v19.953h8.05C23.804,90.904,37.709,82.846,45.867,70.639z"/>
+        </svg>
+    </div>
+
+    <div style="position:relative; top: -40px;"><a name="configuration">&nbsp</a></div>
+    <div class="row">
+        <div class="col-xs-6" id="csv">
+            <h2>1. Data Editor</h2>
+            <p>Paste your CSV data here. <a href="https://github.com/mbostock/d3/wiki/CSV">Learn more about d3 CSV parsing...</a></p>
+            <div id="csvEditor"></div>
+        </div>
+        <div class="col-xs-6">
+            <h2>2. Bar Chart Configuration</h2>
+            <p>Configure your chart and press <code>Generate Chart</code> to load the source code.</p>
+            <div class="alert alert-error" id="warning-no-columns" style="display: none;">
+                <strong>No data available!</strong> Enter some CSV data first.
+            </div>
+            <div class="alert alert-error" id="warning-no-numerical-columns" style="display: none;">
+                <strong>No numerical columns available!</strong> Add a numerical column to the CSV file to render a bar chart.
+            </div>
+            <form class="form-horizontal">
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label" for="inputCategoryColumn">Bar label/grouping</label>
+                        <div class="controls">
+                            <select id="inputCategoryColumn">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputMeasureColumn">Bar length</label>
+                        <div class="controls">
+                            <select class="input-small" id="measureOperation">
+                                <option value='all'>all values</option>
+                                <option value='sum'>sum</option>
+                            </select>
+                            <select class="input-medium" id="inputMeasureColumn">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Order</label>
+                        <div class="controls">
+                            <label class="radio">
+                                <input id="orderOriginal" type="radio" name="order" value="ORIGINAL" checked="true"/>
+                                Original
+                            </label>
+                            <label class="radio">
+                                <input id="orderValueAscending" type="radio" name="order" value="VALUE_ASCENDING" />
+                                Bar length (ascending)
+                            </label>
+                            <label class="radio">
+                                <input id="orderValueDescending" type="radio" name="order" value="VALUE_DESCENDING" />
+                                Bar length (descending)
+                            </label>
+                            <label class="radio">
+                                <input id="orderLabelAlphabetical" type="radio" name="order" value="LABEL_ALPHABETICAL" />
+                                Bar label (alphabetical)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputColour">Colour</label>
+                        <div class="controls">
+                            <select id="inputColour">
+                                 <option value="Original">Original</option>
+                                 <option value="Red">Red</option>
+                                 <option value="Green">Green</option>
+                                 <option value="Purple">Purple</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-actions" id="generateButtonSection">
+                        <a onclick="generateChartButtonClicked(); " class="btn btn-primary btn-large" id="buttonGenerateCode">
+                            <i class="icon-picture icon-white"></i>
+                            Generate Chart
+                        </a>
+                    </div>
+                </fieldset>
+            </form>
+            <div class="alert alert-block alert-error" style="display:none;" id="sourceCodeOverrideAlert">
+                <h4 class="alert-heading">This will override your source code edits!</h4>
+                <p>Are you sure?</p>
+                <p>
+                    <a class="btn btn-danger" onclick="doCallCodeGenerator()">Yes, override my changes</a>
+                    <a class="btn" onclick="abortCodeGeneration()">Not for now - I like my changes</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div style="position:relative; top: -40px;"><a name="source">&nbsp</a></div>
+    <div class="row">
+        <div class="col-xs-6">
+            <h2>3. Source Code Editor</h2>
+            <a  class="btn btn-primary disabled" id="htmlExportButton" data-toggle="modal" data-target="#myModal" style="float:right; margin-left: 20px;" onclick="openHtmlExportDialog()"><i class="icon-file icon-white"></i>Export HTML...</a>
+            <p id="source">
+                The chart is rendered in the DOM element with the id <code>chart</code>. It automatically updates when
+                you modify the source code.
+            </p>
+            <div id="sourceEditor"></div>
+        </div>
+        <div class="col-xs-6">
+            <h2>4. Preview</h2>
+            <div id="chart">
+            </div>
+            <div class="alert alert-error" id="renderError" style="display:none;">
+                <strong>Chart could not be rendered! Check your JavaScript source code.</strong>
+            </div>
+            <div class="alert" id="noChartYet">
+                <strong>No chart generated yet!</strong>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <footer id="footer">
+        <p>D3-Generator.com &copy; <a href="http://www.larsgrammel.de">Lars Grammel, Max Gamrat</a> 2012-2014</p>
+    </footer>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" id="htmlExportDialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <a class="btn btn-primary" id="clipButton">Copy to clipboard</a>
+        <a class="btn" onclick="openHtmlExportPage()">Open HTML in separate window</a>
+      </div> 
+      <div class="modal-body">
+        <p>
+            <pre id="exportHtml">
+            </pre>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/zeroclipboard/ZeroClipboard.js"></script>
+<script src="js/underscore/underscore.js"></script>
+<script src="js/d3/d3.v3.js"></script>
+<script src="js/browserdetect/browserdetect.js"></script>
+<script src="js/ace/ace.js"></script>
+<script src="js/ace/mode-javascript.js"></script>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="d3-generator.js"></script>
+</body></html>
